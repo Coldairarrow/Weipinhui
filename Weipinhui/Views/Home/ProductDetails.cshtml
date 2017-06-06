@@ -1,0 +1,189 @@
+﻿@{
+    Layout = "/Views/Shared/_Template.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>商品详情</title>
+		<link rel="stylesheet" type="text/css" href="/Content/css/product.css"/>
+		<script src="/Content/js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/Content/js/product.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			*{padding: 0px;margin: 0px;}
+			html,body{overflow-x:hidden;height: 100%;width: 100%;font-family: "微软雅黑";position: relative;font-size: 12px;}
+		</style>
+
+        <script>
+            var goodsId = "@ViewData["goodsid"].ToString()";
+            $(() => {
+                var json = {
+                    goodsid:goodsId
+                };
+
+                //初始化绑定数据
+                $.ajax({
+                    //配置
+                    type: "get",
+                    url: "/Api/Goods/GetTheGoods",
+                    data: json,
+                    dataType: 'json',
+                    async: false,//设置为同步操作就可以给全局变量赋值成功 
+                    success: function (returnData) {
+                        $("#Site").text(returnData.Name);
+                        $("#Img-small").attr("src", returnData.BigImg1);
+                        $("#Img-big").attr("src", returnData.BigImg1);
+                        $("#Img-small1").attr("src", returnData.BigImg1);
+                        $("#Img-small2").attr("src", returnData.BigImg2);
+                        $("#GoodsId").text("商品编码：" + returnData.Id + "  收藏商品");
+                        $("#Brand").text(returnData.Brand);
+                        $("#GoodsName").text(returnData.Name);
+                        $("#Price").text(returnData.Price);
+                        $("#Discount").text(returnData.Discount);
+                    }
+                });
+
+                //添加到购物车
+                $("#Submit").click(() => {
+                    var json = {
+                        goodsid: goodsId,
+                        num: $("#Number").text(),
+                        size: $("#Size").attr("data-size"),
+                        color:"默认"
+                    };
+
+                    $.ajax({
+                        //配置
+                        type: "POST",
+                        url: "/Api/Cart/AddGoods",
+                        data: json,
+                        dataType: 'json',
+                        async: false,//设置为同步操作就可以给全局变量赋值成功 
+                        success: function (returnData) {
+                            if (returnData.State == 1)
+                            {
+                                dialogConfirm("添加成功！是否转到购物车？",
+                                    (r) => {
+                                        if (r) {
+                                            location.href = "/Home/Cart";
+                                        }
+                                    }
+                                )
+                            }
+                            else if (returnData.State == -1) {
+                                dialogConfirm("用户未登录！是否转到登陆页面？",
+                                    (r) => {
+                                        if (r) {
+                                            location.href = "/Home/Login";
+                                        }
+                                    }
+                                )
+                            }
+                            else if (returnData.State == 0)
+                            {
+                                dialogConfirm("购物车中商品已存在！是否转到购物车？",
+                                    (r) => {
+                                        if (r) {
+                                            location.href = "/Home/Cart";
+                                        }
+                                    }
+                                )
+                            }
+                        }
+                    });
+                })
+
+                //选择尺寸
+                $(".freight-size").click(function () {
+                    $(this).parent().attr("data-size", $(this).text());
+                });
+            })
+        </script>
+	</head>
+	<body>
+		<!--product start  -->
+		<div id="product">
+			<div class="product-site">
+				<a href="#">首页</a>&nbsp;>&nbsp;
+				<a href="#">品质女装混合专场</a>&nbsp;>&nbsp;
+				<a href="#" id="Site"></a>
+			</div>
+			<div class="product-detail">
+				<div class="product-pic">
+					<div class="product-review">
+						<div class="product-wrap">
+							<img id="Img-small" class="small-img" src=""/>
+							<div class="bg-pos"></div>
+							<img id="Img-big" class="big-img" src="" />
+						</div>
+						<div class="product-item">
+							<ul>
+								<li><img id="Img-small1" class="product-item-btn" index="1" src=""/></li>
+								<li><img id="Img-small2" class="product-item-btn" index="2" src=""/></li>
+							</ul>
+						</div>
+						<div class="product-text">
+                            <p id="GoodsId" class="infoCoding"><p>
+						</div>
+					</div>
+				</div>
+				<div class="product-info">
+					<div class="product-top">
+						<div class="info-title">
+							<p id="Brand" class="title-icon"></p>
+							<p id="GoodsName" class="info-name"></p>
+						</div>
+						<div class="info-price-box">
+							<span class="info-price-data">
+								<i>￥</i>
+								<em id="Price" class="info-price"></em>
+							</span>
+							<p class="info-discount"><span class="discount-btn">折扣</span>购物即享折上<span id="Discount"></span>折优惠</p>
+						</div>
+						<div class="info-form">
+							<span class="freight">运费</span>
+							<span class="freight-price">免运费</span>
+							<span>（订单满288免运费）</span>
+						</div>
+						<div id="Size" data-size="S" class="info-form">
+							<span  class="freight">尺码</span>
+							<span class="freight-size freight-size-selected">S</span>
+							<span class="freight-size">M</span>
+							<span class="freight-size">L</span>
+						</div>
+						<div class="info-form">
+							<span class="freight float">数量</span>
+							<div class="freight-num-box">
+								<button class="freight-num-minus">-</button>
+								<span id="Number" class="freight-num">1</span>
+								<button class="freight-num-plus">+</button>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+						<div class="info-btn">
+							<input id="Submit" class="freight-submit" type="button" name="add" value="加入购物车"/>
+						</div>
+						<div class="info-form">
+							<span class="info-text">购买最多可获249个唯品币</span>
+						</div>
+					</div>
+					<div class="product-bottom">
+						<div class="info-form">
+							<div class="info-form">
+								<span class="freight">服务</span>
+								<span class="freight-server">该商品支持换货，订单签收7天内可申请换货</span>
+							</div>
+							<div class="info-form">
+								<span class="freight-promise">商品放心挑</span>
+								<span class="freight-seven">唯品会七天内无理由放心退（返运费）</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--product end  -->
+	</body>
+</html>
+

@@ -1,0 +1,238 @@
+
+*{
+	margin: 0;
+	padding: 0;
+}
+/*左侧状态栏*/
+.left_kinds{
+	position:fixed;
+	left: 100px;
+	top:190px;
+	background: #fafafa;
+}
+.kind-nav-list li{
+	list-style: none;
+	padding: 5px;
+	text-align: center;
+	
+}
+.kind-nav-list li a:hover{
+	color: aqua;
+}
+.kind-nav-list li a{
+	text-decoration: none;
+	font-family:"微软雅黑";
+	color: #999;
+}
+     /*下面是种类样式*/
+.women{
+	position: relative;
+	left: 190px;
+	width: 900px;
+	font-size: 14px;
+	font-family: Microsoft YaHei;
+}
+.women ul{
+	border-top: 1px solid;
+	border-bottom:1px solid #999;
+	border-left: 1px solid #999;
+	border-right: 1px solid #999;
+	padding: 5px 10px;
+	list-style: none;
+}
+.women  ul li{
+	margin: 10px 10px;
+}
+.img{
+	position:relative;
+	left: 0px;
+	cursor: pointer;
+}
+.women .kinds1{
+	position: absolute;
+	left: 100px;
+	top: 35px;
+	float: left;
+	width: 400px;
+}
+.women .kinds1 a{
+	text-decoration: none;
+	margin:8px;
+	color: #666;
+}
+.women .kinds2{
+	position: absolute;
+	left: 100px;
+	top: 140px;
+	float: left;
+	width: 400px;
+}
+.women .kinds2 a{
+	text-decoration: none;
+	margin:8px;
+	color: #666;
+}
+.women .kinds3{
+	position: absolute;
+	left: 100px;
+	top: 230px;
+	float: left;
+	width: 400px;
+}
+.women .kinds3 a{
+	text-decoration: none;
+	margin:8px;
+	color: #666;
+}
+.women .kinds5{
+	position: absolute;
+	left: 100px;
+	top: 420px;
+	float: left;
+	width: 400px;
+}
+.women .kinds5 a{
+	text-decoration: none;
+	margin:8px;
+	color: #666;
+}
+.women .kinds4{
+	position: absolute;
+	left: 100px;
+	top: 330px;
+	float: left;
+	width: 400px;
+}
+.women .kinds4 a{
+	text-decoration: none;
+	margin: 8px;
+	color: #666;
+	}
+.content_kinds .kinds3 a:hover{
+	color:#f10180 ;
+}
+.content_kinds .kinds2 a:hover{
+	color:#f10180 ;
+}
+.content_kinds .kinds1 a:hover{
+	color:#f10180 ;
+}
+.content_kinds .kinds4 a:hover{
+	color:#f10180 ;
+}
+.content_kinds .kinds5 a:hover{
+	color:#f10180 ;
+}
+
+/*男装区*/
+.men{
+	position: relative;
+	left: 190px;
+	top:10px;
+	font-size: 14px;
+	font-family: Microsoft YaHei;
+}
+.men ul{
+	position: absolute;
+	list-style: none;
+	width:900px;
+	border-top: 1px solid;
+	border-bottom:1px solid #999;
+	border-left: 1px solid #999;
+	border-right: 1px solid #999;	
+}
+.men .img{
+	position:relative;
+	left: 0px;
+	cursor: pointer;
+	margin: 10px;
+}
+.men li .kinds1{
+	position: absolute;
+	left: 100px;
+	width: 400px;
+	top: 10px;
+}
+.men li .kinds2{
+	position: absolute;
+	left: 100px;
+	width: 400px;
+	top: 120px;
+}
+.men li .kinds3{
+	position: absolute;
+	left: 100px;
+	width: 400px;
+	top: 310px;
+}
+.men li .kinds4{
+	position: absolute;
+	left: 100px;
+	width: 410px;
+	top: 230px;
+}
+.men li .kinds5{
+	position: absolute;
+	left: 100px;
+	width: 400px;
+	top: 390px;
+}
+
+.men ul li a{
+	text-decoration: none;
+	color: #666;
+	margin: 8px;
+}
+.men ul li a:hover{
+	color:#f10180 ;
+}
+
+
+/*下面是图片区*/
+.right_img{
+	position:absolute;
+	left: 740px;
+	top: 210px;
+	width:365px;
+	height: 454px;
+	text-align: center;
+	font-family: "微软雅黑";
+	font-size: 14px;
+}
+
+.right_img table img{
+	height: 65px;
+	width: 157px;
+	margin: 0 3px 3px;
+	border: 1px solid #f5eef7;
+}
+.change{
+	position: relative;
+	left: 135px;
+}
+.change span{
+	font-family: tahoma;
+    font-size: 20px;
+    color: #d9d9d9;
+    width: 11px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 5px;
+    cursor: pointer;
+    float: left;
+}
+.change span:hover{
+	color: #f10181;
+}
+ 
+.right_img2{
+	position:absolute;
+	left: 740px;
+	top: 730px;
+	width:365px;
+	height: 454px;
+	text-align: center;
+	font-family: "微软雅黑";
+	font-size: 14px;
+}

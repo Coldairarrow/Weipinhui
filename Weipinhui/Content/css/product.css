@@ -1,0 +1,318 @@
+a{
+	color: #333;
+}
+
+a,a:hover{
+	text-decoration: none;
+}
+
+a:hover{
+	color: #f10180;
+}
+
+ul li{
+	list-style: none;
+}
+
+/* product start */
+
+#product{
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.product-pic{
+	position: relative;
+	width: 420px;
+	float: left;
+	border: 1px solid #eee;
+}
+
+.product-wrap{
+	overflow: hidden;
+	width: 420px;
+	height: 530px;
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.product-review{
+	padding-top: 4px;
+	width: 420px;
+}
+
+.small-img {
+    display: block;
+    width: 420px;
+    height: 530px;
+}
+.bg-pos{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 420px;
+	height: 530px;
+	z-index: 10;
+	cursor: crosshair;
+}
+
+.big-img{
+	position: absolute;
+	width: 250%;
+	height: 250%;
+	display: none;
+	top: 0px;
+	left: 0px;
+}
+
+.product-item{
+	position: relative;
+	width: 420px;
+	height: 80px;
+	overflow: hidden;
+}
+
+.product-item ul{
+	width: 100%;
+	height: 78px;
+}
+
+.product-item ul li{
+	width: 62px;
+	height: 78px;
+	display: inline-block;
+	margin-right: 4px;
+}
+
+.product-item ul li img{
+	width: 62px;
+	height: 78px;
+	cursor: pointer;
+	border: 1px solid #eee;
+}
+
+.product-item ul li img:hover{
+	border: 1px solid #f10180;
+}
+
+.infoCoding{
+	color: #999;
+	line-height: 32px;
+	display: inline-block;
+	font-size: 12px;
+}
+
+.product-info{
+	float: right;
+	width: 550px;
+}
+
+.product-top{
+	height: 538px;
+	border-bottom: 3px dotted #ddd;
+}
+
+.info-title{
+	color: #4d4d4d;
+	margin-bottom: 10px;
+
+}
+
+.title-icon{
+	width: 340px;
+	font-size: 12px;
+	color: #777578;
+	line-height: 22px;
+}
+
+.info-name{
+	font-size: 16px;
+	color: #333;
+	line-height: 20px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	font-weight: 700;
+}
+
+.info-price-box{
+	background: url(/Content/img/product/detail_price_bg.png) no-repeat #faf5f8;
+	margin-bottom: 10px;
+	padding-bottom: 15px;
+}
+
+.info-price-data{
+	font-family: arial;
+	font-size: 44px;
+	margin-left: 20px;
+	display: inline-block;
+	position: relative;
+	color: #f43499;
+	line-height: 1.2;
+	margin-top: 12px;
+}
+
+.info-price-data em{
+	font-style: normal;
+	margin-left: -10px;
+}
+
+.info-price-data i{
+	font-size: 20px;
+	font-style: normal;
+}
+
+.info-discount{
+	padding-left: 20px;
+	color: #333;
+}
+
+.discount-btn{
+	float: left;
+	margin-right: 4px;
+	width: 62px;
+	height: 18px;
+	display: block;
+	text-align: center;
+	line-height: 18px;
+	background-color: #f3b241;
+	color: #fff;
+	font-size: 12px;
+	border: none;
+}
+
+.info-form{
+	color: #333;
+	margin-bottom: 20px;
+}
+
+.freight{
+	height: 18px;
+	line-height: 18px;
+	padding-left: 10px;
+	padding-right: 20px;
+	color: #999;
+}
+
+.freight-price{
+	height: 18px;
+	line-height: 18px;
+	margin-right: 4px;
+	font-size: 12px;
+	background-color: #f3b241;
+	color: #fff;
+	border: none;
+}
+
+.freight-size{
+	position: relative;
+	width: 52px;
+	height: 26px;
+	font-size: 12px;
+	padding: 1px 10px;
+	margin-right: 10px;
+	display: inline-block;
+	border: 1px solid #ccc;
+	text-align: center;
+	line-height: 26px;
+	cursor: pointer;
+	background-color: #fff;
+}
+
+.freight-size-selected{
+	border: 1px solid #f10180;
+}
+
+.freight-size:hover{
+	border: 1px solid #f10180;
+}
+
+.float{
+	float: left;
+	margin-top: 4px;
+}
+
+.freight-num-box{
+	margin-left: 4px;
+	float: left;
+	width: 80px;
+	height: 28px;
+	border: 1px solid #b3b3b3;
+}
+
+.freight-num{
+	float: left;
+	height: 28px;
+	width: 26px;
+	line-height: 28px;
+	text-align: center;
+	display: block;
+	font-size: 16px;
+	color: #333;
+}
+
+.freight-num-minus,.freight-num-plus{
+	float: left;
+	height: 28px;
+	width: 26px;
+	line-height: 28px;
+	text-align: center;
+	display: block;
+	font-size: 24px;
+	color: #999;
+	background-color: #eee;
+	outline: medium;
+	border: none;
+	cursor: pointer;
+}
+
+.clearfix{
+	clear: both;
+}
+
+.info-btn{
+	margin-bottom: 12px;
+	margin-left: 40px;
+	margin-top: 20px;
+}
+
+.freight-submit{
+	height: 46px;
+	width: 198px;
+	background-color: #f10180;
+	border: 1px solid #f10180;
+	border-radius: 3px;
+	text-align: center;
+	transition: .3s;
+	color: #fff;
+	font-size: 20px;
+	outline: medium;
+	cursor: pointer;
+}
+.freight-submit:hover{
+	background-color: #f43499;
+	border-color: #f43499;
+}
+
+.info-text{
+	margin-left: 40px;
+	color: #999;
+}
+
+.product-bottom{
+	padding-top: 20px;
+}
+
+.freight-promise{
+	padding-left: 50px;
+	color: #cdcdcd;
+	font-size: 16px;
+	padding-right: 50px;
+	border-right: 2px solid #bcbcbc;
+}
+
+.freight-seven{
+	padding-left: 50px;
+	color: #cdcdcd;
+	font-size: 16px;
+}
+/* product end */

@@ -1,0 +1,214 @@
+﻿@{
+    Layout = "/Views/Shared/_Template.cshtml";
+}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="/Content/css/list.css"/>
+		<title>商品列表</title>
+		<style type="text/css">
+			*{padding: 0px;margin: 0px;}
+			html,body{overflow-x:hidden;height: 100%;width: 100%;font-family: "微软雅黑";position: relative;}
+		</style>
+
+        <script>
+            //全局商品列表变量，Vue对象
+            var goodsList = {};
+            var code1 = request("code1");
+            var code2 = request("code2");
+            var code3 = request("code3");
+            var keyWord = request("keyWord");
+            //加载所有商品
+            function GetGoodsList(sortMethod) {
+                var param = {};
+                if (code1 && code2 && code3)
+                {
+                    param.code1 = code1;
+                    param.code2 = code2;
+                    param.code3 = code3;
+                }
+                switch (sortMethod) {
+                    case "priceAsc": param.sortMethod = "priceAsc"; break;
+                    case "priceDesc": param.sortMethod = "priceDesc"; break;
+                    case "discountAsc": param.sortMethod = "discountAsc"; break;
+                    case "discountDesc": param.sortMethod = "discountDesc"; break;
+                    default: break;
+                }
+
+                if ($("#PriceStart").val() && $("#PriceEnd").val()) {
+                    param.priceStart = $("#PriceStart").val();
+                    param.priceEnd = $("#PriceEnd").val();
+                }
+                if (keyWord)
+                {
+                    param.keyWord = keyWord;
+                }
+                $.getJSON("/Api/Goods/GetGoodsJson", param, (res) => {
+                    goodsList.list = res;
+                })
+            }
+
+            $(() => {
+                goodsList = new Vue({
+                    el: '#GoodsList',
+                    data: {
+                        list: []
+                    },
+                    updated: function () {
+                        bind();
+                    }
+                })
+                GetGoodsList();
+                $("#SearchPrice").click(() => {
+                    GetGoodsList();
+                })
+            })
+        </script>
+        <script src="/Content/js/list.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="list">
+			<div class="list-site">
+				<a href="#">首页</a>&nbsp;>&nbsp;
+				<a href="#">品质女装</a>
+			</div>
+			
+			<div class="list-sort">
+				<div class="sort">
+					<div class="sort-title">品牌</div>
+					<div class="brand-detail">
+						<a class="brand-logo" href="#"><span>Miss Sixty</span><img src="/Content/img/list/primary.png" /></a>
+						<a class="brand-logo" href="#"><span>Miss Sixty</span><img src="/Content/img/list/primary.png" /></a>
+						<a class="brand-logo" href="#"><span>Miss Sixty</span><img src="/Content/img/list/primary.png" /></a>
+						<a class="brand-logo" href="#"><span>Miss Sixty</span><img src="/Content/img/list/primary.png" /></a>
+						<a class="brand-logo" href="#"><span>Miss Sixty</span><img src="/Content/img/list/primary.png" /></a>
+						<a class="brand-logo" href="#"><span>Miss Sixty</span><img src="/Content/img/list/primary.png" /></a>
+						<a class="brand-logo" href="#"><span>Miss Sixty</span><img src="/Content/img/list/primary.png" /></a>
+						<a class="brand-logo" href="#"><span>Miss Sixty</span><img src="/Content/img/list/primary.png" /></a>
+						<a class="brand-logo" href="#"><span>Miss Sixty</span><img src="/Content/img/list/primary.png" /></a>
+						<a class="brand-logo" href="#"><span>Miss Sixty</span><img src="/Content/img/list/primary.png" /></a>
+						<a class="brand-logo" href="#"><span>Miss Sixty</span><img src="/Content/img/list/primary.png" /></a>
+						<a class="brand-logo" href="#"><span>Miss Sixty</span><img src="/Content/img/list/primary.png" /></a>
+						<a class="brand-logo" href="#"><span>Miss Sixty</span><img src="/Content/img/list/primary.png" /></a>
+						<a class="brand-logo" href="#"><span>Miss Sixty</span><img src="/Content/img/list/primary.png" /></a>
+					</div>
+					<div class="list-more">
+						<span>更多</span><span class="mul-choice">+多选</span>
+					</div>
+				</div>
+				<div class="sort">
+					<div class="sort-title">尺码</div>
+					<div class="sort-detail">
+						<a href="#" class="detail-text">XXS</a>
+						<a href="#" class="detail-text">XS</a>
+						<a href="#" class="detail-text">S</a>
+						<a href="#" class="detail-text">M</a>
+						<a href="#" class="detail-text">L</a>
+						<a href="#" class="detail-text">XL</a>
+						<a href="#" class="detail-text">XXL</a>
+						<a href="#" class="detail-text">XXXL</a>
+						<a href="#" class="detail-text">XXXXL</a>
+					</div>
+					<div class="list-more">
+						<span>更多</span><span class="mul-choice">+多选</span>
+					</div>
+				</div>
+				<div class="sort">
+					<div class="sort-title">颜色</div>
+					<div class="sort-detail">
+						<a href="#" class="detail-text">银色</a>
+						<a href="#" class="detail-text">青色</a>
+						<a href="#" class="detail-text">红色</a>
+						<a href="#" class="detail-text">浅蓝</a>
+						<a href="#" class="detail-text">杏黄</a>
+						<a href="#" class="detail-text">米色</a>
+						<a href="#" class="detail-text">褐色</a>
+						<a href="#" class="detail-text">棕色</a>
+					</div>
+					<div class="list-more">
+						<span>更多</span><span class="mul-choice">+多选</span>
+					</div>
+				</div>
+				<div class="sort">
+					<div class="sort-title">风格</div>
+					<div class="sort-detail">
+						<a href="#" class="detail-text">其他</a>
+						<a href="#" class="detail-text">欧美</a>
+						<a href="#" class="detail-text">简约</a>
+						<a href="#" class="detail-text">街头</a>
+						<a href="#" class="detail-text">田园</a>
+						<a href="#" class="detail-text">休闲</a>
+						<a href="#" class="detail-text">甜美</a>
+						<a href="#" class="detail-text">原创设计</a>
+					</div>
+					<div class="list-more">
+						<span>更多</span><span class="mul-choice">+多选</span>
+					</div>
+				</div>
+				<div class="sort">
+					<div class="sort-title">版型</div>
+					<div class="sort-detail">
+						<a href="#" class="detail-text">直筒型</a>
+						<a href="#" class="detail-text">宽松型</a>
+						<a href="#" class="detail-text">合体型</a>
+						<a href="#" class="detail-text">H型</a>
+						<a href="#" class="detail-text">修身型</a>
+						<a href="#" class="detail-text">X型</a>
+						<a href="#" class="detail-text">紧身</a>
+						<a href="#" class="detail-text">修身</a>
+					</div>
+					<div class="list-more">
+						<span>更多</span><span class="mul-choice">+多选</span>
+					</div>
+				</div>
+			</div>
+			
+			<div class="sort-search">
+				<div class="sort-item sort-search-all">综合</div>
+				<div id="Sort-Price" class="sort-item sort-text">价格<img src="/Content/img/list/all.png" /></div>
+				<div id="Sort-Discount" class="sort-item sort-text">折扣<img src="/Content/img/list/all.png" /></div>
+				<div class="sort-search-box">
+					<div class="sort-from-price">
+						<input id="PriceStart" class="startPrice" type="text" name="startPrice" placeholder="￥" /> -
+						<input id="PriceEnd" class="endPrice" type="text" name="endPrice" placeholder="￥" />
+						<input id="SearchPrice" type="button" name="submit" value="确定" />
+					</div>
+				</div>
+				<div class="sort-check-hot">
+					<input type="checkbox" name="hot" /><span class="sort-hot-text">只看预热商品</span>
+				</div>
+				<div class="list-next">
+					<span class="next">下一页</span>
+				</div>
+			</div>
+
+            <div id="GoodsList" class="sort-product-list">
+                <template v-for="good in list">
+                    <div :data-goodsid="good.Id" class="sort-product-item">
+                        <div class="sort-product-pic">
+                            <img :src="good.BigImg1" />
+                        </div>
+                        <div class="sort-product-text">
+                            <div class="side-product-pic">
+                                <img :src="good.BigImg1" />
+                                <img :src="good.BigImg2" />
+                            </div>
+                            <div class="sort-product-price">
+                                <i>￥</i>
+                                <span class="price-text">{{good.Price}}</span>
+                                <del>
+                                    ￥{{good.OldPrice}}
+                                </del>
+                                <span class="price-discount">{{good.Discount}}折</span>
+                            </div>
+                            <div class="sort-product-title">
+                                {{good.Name}}
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,152 @@
+
+a{
+	text-decoration: none;
+}
+/* login start */
+#login{
+	width: 1000px;
+	margin: 40px auto;
+}
+
+.header{
+	width: 100%;
+	padding-bottom: 44px;
+}
+
+.header-logo{
+	float: left;
+	width: 314px;
+	height: 54px;
+	display: block;
+	border: 1px solid #eee;
+}
+
+.header-promise{
+	float: right;
+	margin-top: 10px;
+	width: 446px;
+	height: 40px;
+	border: 1px solid #eee;
+}
+
+.clearfix{
+	clear: both;
+}
+
+.content{
+	height: 600px;
+	border: 1px solid #ddd;
+	background-image: url(../img/login/login_bg.jpg);
+}
+
+.wrap{
+	float: right;
+	width: 274px;
+	padding-top: 40px;
+	padding-right: 100px;
+	border: 1px solid #eee;
+}
+
+.login-tip{
+	font-size: 14px;
+	line-height: 16px;
+	margin-bottom: 16px;
+}
+
+.login-input{
+	width: 250px;
+	padding: 8px 10px;
+	background-color: #fff;
+	border: 1px solid #b2b2b2;
+	border-radius: 2px;
+	outline: medium;
+}
+
+.login-error{
+	height: 24px;
+	line-height: 24px;
+	color: #f20266;
+    display: none;
+}
+
+.login-submit{
+	margin-bottom: 14px;
+}
+
+.login-submit>.submit-btn{
+	width: 140px;
+	height: 40px;
+	font-size: 16px;
+	line-height: 40px;
+	color: #fff;
+	background-color: #f10180;
+	border: 1px solid #f10180;
+	border-radius: 4px;
+	cursor: pointer;
+	outline: medium;
+}
+
+.login-checkbox{
+	vertical-align: middle;
+	width: 20px;
+	height: 16px;
+}
+
+.login-other{
+	height: 20px;
+	margin-bottom: 50px;
+}
+
+.login-other>.login-left{
+	float: left;
+}
+
+.other-span{
+	vertical-align: middle;
+}
+
+.login-other>.login-right{
+	float: right;
+}
+
+a:hover{
+	color: #f10180;
+}
+
+.login-forget{
+	color: #666;
+	padding-right: 2px;
+}
+
+.login-free{
+	color: #f10180;
+	padding-left: 2px;
+}
+
+.login-third{
+	line-height: 24px;
+	color: #666;
+}
+
+.login-third>.third-title{
+	margin-bottom: 5px;
+}
+
+.third-icon{
+	width: 24px;
+	height: 24px;
+	border: 1px solid #eee;
+	display: inline-block;
+	margin-right: 8px;
+}
+
+.third-more{
+	color: #666;
+	vertical-align: top;
+}
+
+.footer{
+	color: #767074;
+	text-align: center;
+}
+/* login end */

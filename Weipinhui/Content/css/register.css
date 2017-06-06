@@ -1,0 +1,144 @@
+a{
+	text-decoration: none;
+}
+/* register start */
+#register{
+	width: 1000px;
+	margin: 40px auto;
+}
+
+.header{
+	width: 100%;
+	padding-bottom: 44px;
+}
+
+.header-logo{
+	float: left;
+	width: 314px;
+	height: 54px;
+	display: block;
+	border: 1px solid #eee;
+}
+
+.header-promise{
+	float: right;
+	margin-top: 10px;
+	width: 445px;
+	height: 40px;
+	border: 1px solid #eee;
+}
+
+.clearfix{
+	clear: both;
+}
+
+.content{
+	height: 600px;
+	border: 1px solid #ddd;
+	background-image: url(../img/login/login_bg.jpg);
+}
+
+.wrap{
+	border: 1px solid #eee;
+	float: right;
+	margin: 40px 30px 0 0;
+	width: 344px;
+}
+
+.reg-header{
+	padding-right: 70px;
+	font-size: 12px;
+	margin-bottom: 20px;
+}
+
+.reg-login{
+	color: #f10180;
+}
+
+.reg-left{
+	float: left;
+}
+
+.reg-right{
+	float: right;
+}
+
+.reg-input{
+	width: 248px;
+	height: 18px;
+	line-height: 18px;
+	margin-top: 26px;
+	padding: 6px 10px;
+	color: #333;
+	border: 1px solid #b2b2b2;
+	border-radius: 3px;
+	outline: medium;
+}
+
+.pvcode-width{
+	width: 118px;
+}
+
+.pvcode-btn{
+	height: 30px;
+	width: 92px;
+	margin-left: 12px;
+	font-size: 12px;
+	padding: 0 12px;
+	border: 1px solid #d0d0d0;
+	border-radius: 3px;
+	color: #999;
+	background: #d0d0d0;
+	text-align: center;
+	line-height: 30px;
+	display: inline-block;
+	cursor: not-allowed;
+}
+
+.submit-btn{
+	font-size: 16px;
+	width: 140px;
+	height: 40px;
+	background-color: #f10180;
+	border: 1px solid #f10180;
+	color: #fff;
+}
+
+.reg-mail{
+	padding-left: 40px;
+	display: inline-block;
+	color: #1d94d1;
+	height: 16px;
+	width: 100px;
+	vertical-align: bottom;
+}
+
+.register-other{
+	height: 20px;
+	margin-top: 10px;
+}
+
+.register-checkbox{
+	vertical-align: middle;
+	width: 20px;
+	height: 16px;
+}
+
+.other-span{
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.provision{
+	color: #ff0000;
+}
+
+a:hover{
+	color: #f10180;
+}
+
+.footer{
+	color: #767074;
+	text-align: center;
+}
+/* register end */

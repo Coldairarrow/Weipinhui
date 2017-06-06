@@ -1,0 +1,93 @@
+﻿@{
+    Layout = "/Views/Shared/_Js_Css_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登陆</title>
+		<link rel="stylesheet" type="text/css" href="/Content/css/login.css"/>
+		<style type="text/css">
+			*{padding: 0px;margin: 0px;}
+			html,body{overflow-x:hidden;height: 100%;width: 100%;font-family: "微软雅黑";position: relative;font-size: 12px;}
+		</style>
+        <script>
+            $(() => {
+                $("#Login").click(() => {
+                    var account = $("#Account").val();
+                    var password = md5($("#Password").val());
+                    if (account == ""){
+                        dialogMsg("用户名不能为空");
+                        return;
+                    } else if (!$("#Password").val()){
+                        dialogMsg("密码不能为空");
+                        return;
+                    } else {
+                        var json = {
+                            account: account,
+                            password: password
+                        };
+                        $.ajax({
+                            //配置
+                            type: "POST",
+                            url: "/Api/User/Login",
+                            data: json,
+                            dataType: 'json',
+                            async: false,//设置为同步操作就可以给全局变量赋值成功 
+                            success: function (returnData) {
+                                if (returnData.State == 1) {
+                                    dialogAlert(returnData.Msg);
+                                    location.href = "/Home/Index";
+                                }
+                                else {
+                                    dialogAlert(returnData.Msg);
+                                }
+                            }
+                        });
+                    }
+
+                })
+            });
+        </script>
+	</head>
+	<body>
+		<!-- login start -->
+		<div id="login">
+			<div class="header">
+				<a class="header-logo" href=""></a>
+				<a class="header-promise" href=""></a>
+			</div>
+			<div class="clearfix"></div>
+			<div class="content">
+				<div class="wrap">
+					<div class="login-tip">如有账号，请登录</div>
+					<form action="" method="post">
+						<input id="Account" class="login-input" type="text" name="username" placeholder="手机号/用户名/邮箱" />
+						<input id="Password" class="login-input" type="password" name="password" placeholder="密码" />
+						<div class="login-submit">
+							<button id="Login" type="button" class="submit-btn">登录</button>
+						</div>
+					</form>
+					<div class="login-other">
+						<p class="login-left"><input class="login-checkbox" type="checkbox" name="remember" /><span class="other-span">记住用户名</span></p>
+						<p class="login-right"><a class="login-forget" href="#">忘记密码?</a>|<a class="login-free" href="/Home/Register">免费注册</a></p>
+					</div>
+					<div class="login-third">
+						<p class="third-title">合作网站账号登录：</p>
+						<p class="">
+							<a class="third-icon" href="#"></a>
+							<a class="third-icon" href="#"></a>
+							<a class="third-icon" href="#"></a>
+							<a class="third-icon" href="#"></a>
+							<a class="third-more" href="#">更多</a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				Copyright 2008-2017 vip.com，All Rights Reserved ICP证：粤 B2-20080329
+			</div>
+		</div>
+		<!-- login end -->
+	</body>
+</html>

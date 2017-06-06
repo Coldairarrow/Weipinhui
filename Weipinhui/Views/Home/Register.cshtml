@@ -1,0 +1,91 @@
+﻿@{ 
+    Layout = "/Views/Shared/_Js_Css_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>注册</title>
+		<link rel="stylesheet" type="text/css" href="/Content/css/register.css"/>
+		<style type="text/css">
+			*{padding: 0px;margin: 0px;}
+			html,body{overflow-x:hidden;height: 100%;width: 100%;font-family: "微软雅黑";position: relative;font-size: 12px;}
+		</style>
+        <script>
+            $(() => {
+                $("#Register").click(() => {
+                    if (!$("#Agree").prop("checked"))
+                    {
+                        dialogMsg("请仔细阅读并同意协议！");
+                        return;
+                    }
+                    var account = $("#Account").val();
+                    var password = md5($("#Password").val());
+                    if (account != "" && $("#Password").val() != "") {
+                        var json = {
+                            Account: account,
+                            Password: password
+                        };
+                        $.ajax({
+                            //配置
+                            type: "POST",
+                            url: "/Api/User/Register",
+                            data: json,
+                            dataType: 'json',
+                            async: false,//设置为同步操作就可以给全局变量赋值成功 
+                            success: function (returnData) {
+                                if (returnData.State == 1) {
+                                    dialogAlert(returnData.Msg);
+                                    setTimeout(() => {
+                                        location.href = "/Home/Login";
+                                    }, 1000)
+                                }
+                                else {
+                                    dialogAlert(returnData.Msg);
+                                }
+                            }
+                        });
+                    }
+                    else {
+                        dialogMsg("用户名和密码不能为空！");
+                        return;
+                    }
+                })
+
+            })
+        </script>
+	</head>
+	<body>
+		<!-- register start  -->
+		<div id="register">
+			<div class="header">
+				<a class="header-logo" href=""></a>
+				<a class="header-promise" href=""></a>
+			</div>
+			<div class="clearfix"></div>
+			
+			<div class="content">
+				<div class="wrap">
+					<div class="reg-header">
+						<span class="reg-left">欢迎注册</span>
+						<span class="reg-right">已注册可<a class="reg-login" href="/Home/Login">直接登录</a></span>
+					</div>
+					<div class="clearfix"></div>
+					<form action="" method="post">
+						<input id="Account" class="reg-input" type="text" name="username" placeholder="请输入账号" />
+						<input id="Password" class="reg-input" type="password" name="password" placeholder="密码由6-20位字母，数字和符号组合" />
+						<input id="Register" style="cursor:pointer" class="reg-input pvcode-width submit-btn" type="button" value="立即注册" />
+					</form>
+					<div class="register-other">
+						<input id="Agree" class="register-checkbox" type="checkbox" /><span class="other-span">我已阅读并接受<a class="provision">唯品会服务条款</a>。</span>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				Copyright 2008-2017 vip.com，All Rights Reserved ICP证：粤 B2-20080329
+			</div>
+		</div>
+		<!-- register end -->
+	</body>
+</html>
+

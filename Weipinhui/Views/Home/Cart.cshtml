@@ -1,0 +1,115 @@
+﻿@{
+    Layout = "/Views/Shared/_Template.cshtml";
+}
+@model List<Business.GoodsList>
+@{ 
+    double sumPrice = 0;
+    double sumPriceDis = 0;
+    double rowSum = 0;
+    int i = 0;
+}
+<title>购物车</title>
+<link rel="stylesheet" type="text/css" href="/Content/css/shoppingCar.css" />
+<script>
+    $(() => {
+        $(".del").click(function () {
+            var $thisRow = $(this);
+            dialogConfirm("是否删除该物品？",
+                (r) => {
+                    if (r) {
+                        var json = {
+                            Id: $(this).attr("data-id")
+                        }
+                        $.ajax({
+                            //配置
+                            type: "POST",
+                            url: "/Api/Cart/DeleteGoods",
+                            data: json,
+                            dataType: 'json',
+                            async: false,//设置为同步操作就可以给全局变量赋值成功 
+                            success: function (res) {
+                                if (res.State == 1)
+                                {
+                                    $thisRow.parents("table").remove();
+                                    dialogAlert("删除成功！");
+                                    refreshSum();
+                                }
+                            }
+                        });
+                    }
+                }
+            )
+        });
+    })
+</script>
+<div id="car">
+    <div class="car-bar">
+        <img src="/Content/img/shoppingCar/car_title.png" />
+    </div>
+    <div class="car-time">
+        <label>购物袋</label>&nbsp;&nbsp;|&nbsp;&nbsp;请在<strong>20分钟</strong>内下单后，你另有 30 分钟的支付时间。
+    </div>
+    <div class="car-title">
+        <ul>
+            <li class="car-title-first">唯品自营</li>
+            <li>单价</li>
+            <li>数量</li>
+            <li>小计</li>
+            <li>操作</li>
+        </ul>
+    </div>
+    <div class="car-content">
+        @foreach (var item in Model)
+        {
+            {
+                sumPrice += item.Price * item.Number;
+                rowSum = item.Price * item.Number;
+            }
+            <table>
+                <tr>
+                    <td class="car-content-first">
+                        <div class="car-content-pic">
+                            <img src="@item.Img" />
+                        </div>
+                        <div class="car-content-name">
+                            @item.Name<br />
+                            尺码：@item.Size
+                        </div>
+                    </td>
+                    <td class="car-content-other">¥<strong class="single-price">@item.Price</strong></td>
+                    <td class="car-content-other">
+                        <button data-goodsid="@item.GoodsId" class="minus" index="@i">-</button>
+                        <span class="num" index="@i">@item.Number</span>
+                        <button data-goodsid="@item.GoodsId" class="plus" index="@i">+</button>
+                    </td>
+                    <td class="car-content-other"><span class="goods-num">¥<strong class="single-total">@rowSum</strong></span></td>
+                    <td class="car-content-other">
+                        <button data-goodsid="@item.GoodsId" data-id="@item.Id" class="del">删除</button>
+                    </td>
+                </tr>
+            </table>
+
+            { i++; }
+        }
+    </div>
+    <div class="car-fright">
+        <span class="car-fright-title">运费</span>
+        <span>本组商品已免运费。</span>
+    </div>
+    <div class="car-pay">
+        <ul>
+            <li>共<label id="Count" class="goods-num">@Model.Count</label>件商品&nbsp;&nbsp;商品金额&nbsp;&nbsp;<label class="goods-num">¥</label><label id="SumPrice" class="goods-num goods-total-num">@sumPrice</label></li>
+            <li>优惠券优惠&nbsp;&nbsp;-¥10</li>
+            @{
+                sumPriceDis = sumPrice - 10 >= 0 ? sumPrice - 10 : 0;
+            }
+
+            <li>总金额（以免运费）&nbsp;&nbsp;<label class="goods-num">¥</label><label id="SumPriceDis" class="goods-num good-num-weight goods-free-num">@sumPriceDis</label></li>
+            <li class="goods-headline">
+                <span class="goods-headline-tips">请在倒计时结束前结算</span>
+                <button class="goods-cal">立即结算</button>
+            </li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript" src="/Content/js/ShoppingCar.js"></script>

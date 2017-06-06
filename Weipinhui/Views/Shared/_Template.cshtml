@@ -1,0 +1,288 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/Content/css/template.css" />
+    <style type="text/css">
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        html, body {
+            overflow-x: hidden;
+            height: 100%;
+            width: 100%;
+            font-family: "微软雅黑";
+            position: relative;
+        }
+    </style>
+    <script src="~/Content/js/jquery-2.1.0.js"></script>
+    <script src="~/Content/js/framework-ui.js"></script>
+    <script src="~/Content/js/layer/layer.js"></script>
+    <script src="~/Content/js/md5.min.js"></script>
+    @* 使用用Vue.js2框架 *@
+    <script src="~/Content/js/base/vue.js"></script>
+    <script>
+        $.ajaxSetup({
+            cache: false,
+            async: false
+        });
+
+        $(() => {
+            $("#Search").click(() => {
+                var keyWord = $("#SearchKeyword").val();
+                location.href = "/Home/List?keyWord=" + keyWord;
+            });
+
+            $("#Logout").click(function(){
+                dialogConfirm("是否要退出？",
+                    function(r) {
+                        if (r) {
+                            location.href = "/Home/Logout";
+                        }
+                    }
+                )
+            });
+        });
+
+        //处理请求
+        function request(key) {
+            var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
+            var result = window.location.search.substr(1).match(reg);
+            return result ? decodeURIComponent(result[2]) : null;
+        }
+    </script>
+</head>
+<body>
+    <!-- nav start -->
+    <div id="nav">
+        <div class="nav-pos">
+            <div class="nav-addr">
+                <span class="nav-choice">浙江</span>
+                <img src="/img/nav/arrow.png" />
+                <div class="nav-addrs-hide nav-white-hide"></div>
+                <div class="nav-addrs nav-hide-pos">
+                    <p class="nav-addrs-head">请选择所在的收货地区</p>
+                    <table>
+                        <tr>
+                            <th>A</th>
+                            <td>安徽</td>
+                            <td>澳门</td>
+                        </tr>
+                        <tr>
+                            <th>B</th>
+                            <td>北京</td>
+                        </tr>
+                        <tr>
+                            <th>C</th>
+                            <td>重庆</td>
+                        </tr>
+                        <tr>
+                            <th>F</th>
+                            <td>福建</td>
+                        </tr>
+                        <tr>
+                            <th>G</th>
+                            <td>广东</td>
+                            <td>广西</td>
+                            <td>贵州</td>
+                            <td>甘肃</td>
+                        </tr>
+                        <tr>
+                            <th>H</th>
+                            <td>河北</td>
+                            <td>河南</td>
+                            <td>黑龙江</td>
+                            <td>海南</td>
+                            <td>湖南</td>
+                        </tr>
+                        <tr>
+                            <th>J</th>
+                            <td>江苏</td>
+                            <td>吉林</td>
+                            <td>江西</td>
+                        </tr>
+                        <tr>
+                            <th>L</th>
+                            <td>辽宁</td>
+                        </tr>
+                        <tr>
+                            <th>N</th>
+                            <td>内蒙古</td>
+                            <td>宁夏</td>
+                        </tr>
+                        <tr>
+                            <th>Q</th>
+                            <td>青海</td>
+                        </tr>
+                        <tr>
+                            <th>S</th>
+                            <td>上海</td>
+                            <td>山东</td>
+                            <td>山西</td>
+                            <td>四川</td>
+                            <td>陕西</td>
+                        </tr>
+                        <tr>
+                            <th>T</th>
+                            <td>台湾</td>
+                            <td>天津</td>
+                        </tr>
+                        <tr>
+                            <th>X</th>
+                            <td>西藏</td>
+                            <td>香港</td>
+                            <td>新疆</td>
+                        </tr>
+                        <tr>
+                            <th>Y</th>
+                            <td>云南</td>
+                        </tr>
+                        <tr>
+                            <th>Z</th>
+                            <td>浙江</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <ul class="nav-list">
+                <li class="nav-list-item">
+                    @if (Session["Account"] == null)
+            {
+                        <span class="nav-title"><a href="/home/Login">请登录</a></span>
+                        <div class="nav-login-hide nav-white-hide"></div>
+                        <div class="nav-login nav-hide-pos">
+                            <div class="nav-login-top">
+                                <div class="login-logo"></div>
+                                <div class="login-title">
+                                    <a href="/Home/Login">您好！[请登录]</a>
+                                </div>
+                            </div>
+                            <div class="nav-login-bottom">
+                                <a href="#">我的收藏</a>
+                                <a href="#">我的订单</a>
+                                <a href="#">零钱</a>
+                                <a href="#">我的优惠券</a>
+                                <a href="#">我的唯品币</a>
+                                <a href="#">唯品金融</a>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <span class="nav-title">欢迎!@Session["Account"].ToString()</span>
+                        <div class="nav-login-hide nav-white-hide"></div>
+                        <div class="nav-login nav-hide-pos">
+                            <div class="nav-login-top">
+                                <div class="login-logo"></div>
+                                <div class="login-title">
+                                    <a style="cursor:pointer" id="Logout">@Session["Account"].ToString() [退出]</a>
+                                </div>
+                            </div>
+                            <div class="nav-login-bottom">
+                                <a href="#">我的收藏</a>
+                                <a href="#">我的订单</a>
+                                <a href="#">零钱</a>
+                                <a href="#">我的优惠券</a>
+                                <a href="#">我的唯品币</a>
+                                <a href="#">唯品金融</a>
+                            </div>
+                        </div>
+                    }
+                </li>
+                <li class="nav-list-item"><span class="nav-title"><a href="/Home/Register">注册</a></span></li>
+                <li class="nav-list-item"><span class="nav-title">我的订单</span></li>
+                <li class="nav-list-item"><span class="nav-title">我的收藏</span><img src="/img/nav/arrow.png" /></li>
+                <li class="nav-list-item"><span class="nav-title">会员俱乐部</span><img src="/img/nav/arrow.png" /></li>
+                <li class="nav-list-item"><span class="nav-title">客户服务</span><img src="/img/nav/arrow.png" /></li>
+                <li class="nav-list-item"><img class="item-img" src="/img/nav/phone_icon.png" /><span class="nav-title">手机版</span></li>
+                <li class="nav-list-item"><span class="nav-title">更多</span><img src="/img/nav/arrow.png" /></li>
+            </ul>
+        </div>
+    </div>
+    <!-- nav end -->
+    <!-- head start -->
+    <div id="head">
+        <div class="head-pos">
+            <div class="head-item-logo">
+                <a href="/Home/Index"><img src="/img/head/logo.png" /></a>
+            </div>
+            <div class="head-search">
+                <input id="SearchKeyword" class="head-search-control" type="search" name="name" placeholder="搜索..." />
+                <input id="Search" class="head-btn-control" type="button" name="search" value="搜索" />
+            </div>
+            <ul class="head-right">
+                <!--<li class="head-item-info"><a href="#"><img class="info-img" src="/img/head/quality.png" /></a></li>
+                <li class="head-item-info"><a href="#"><img class="info-img" src="/img/head/seven.png" /></a></li>
+                <li class="head-item-info"><a href="#"><img class="info-img" src="/img/head/return.png" /></a></li>-->
+                <li class="head-item-info"><a href="/home/Cart"><img class="cart-img" src="/img/head/cart.png" />我的购物袋</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- head end -->
+    <!-- menu start -->
+    <div id="menu">
+        <div class="menu-pos">
+            <span></span>
+            <ul>
+                <li class="menu-item font-weight menu-active"><a href="/Home/Index">首页</a></li>
+                <li class="menu-item font-weight"><a href="#">唯品国际</a></li>
+                <li class="menu-item font-weight"><a href="#">母婴</a></li>
+                <li class="menu-item font-weight"><a href="#">家居家电</a></li>
+                <li class="menu-item"><a href="#">男士</a></li>
+                <li class="menu-item"><a href="#">美妆</a></li>
+                <li class="menu-item"><a href="#">生活</a></li>
+                <li class="menu-item"><a href="#">金融</a></li>
+                <li class="menu-item more-flag">
+                    更多
+                    <img src="/img/menu/arrow.png" />
+                    <div class="menu-more">
+                        <div class="menu-more-item">
+                            <img src="/img/menu/more_1.jpg" />
+                            <div class="shadow">
+                                女装
+                            </div>
+                        </div>
+                        <div class="menu-more-item">
+                            <img src="/img/menu/more_2.jpg" />
+                            <div class="shadow">
+                                鞋包
+                            </div>
+                        </div>
+                        <div class="menu-more-item">
+                            <img src="/img/menu/more_3.jpg" />
+                            <div class="shadow">
+                                配饰
+                            </div>
+                        </div>
+                        <div class="menu-more-item">
+                            <img src="/img/menu/more_4.jpg" />
+                            <div class="shadow">
+                                运动
+                            </div>
+                        </div>
+                        <div class="menu-more-item">
+                            <img src="/img/menu/more_5.jpg" />
+                            <div class="shadow">
+                                爱丽奢
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="menu-sort">
+                <li class="menu-sort-item">
+                    <a href="/Home/Goods_kinds"><img src="/img/menu/sort.png" />分类</a>
+                </li>
+                <li class="menu-sort-item">
+                    <a href="#"><img src="/img/menu/foreshow.png" />预告</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    @RenderBody()
+    <!-- menu end -->
+</body>
+</html>
+<script src="/Content/js/template.js" type="text/javascript" charset="utf-8"></script>

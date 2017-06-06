@@ -1,0 +1,1585 @@
+﻿@{
+    Layout = "/Views/Shared/_Template.cshtml";
+}
+
+<title>首页</title>
+<style type="text/css">
+    * {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    html, body {
+        overflow-x: hidden;
+        height: 100%;
+        width: 100%;
+        font-family: "微软雅黑";
+        position: relative;
+    }
+</style>
+<link rel="stylesheet" type="text/css" href="/Content/css/index.css" />
+<div class="page">
+    <!-- sidebar start -->
+    <div id="sidebar">
+        <div class="sidebar-personal-top">
+            <ul>
+                <li class="sidebar-item-account">
+                    <img src="/Content/img/index/sidebar/user.png" />
+                    <p class="siderbar-account">账号</p>
+                </li>
+                <li class="sidebar-item-cart">
+                    <img src="/Content/img/index/sidebar/cart.png" />
+                    <p class="sidebar-cart">购物袋</p>
+                    <div class="personal-circle">0</div>
+                    <div class="personal-cart"></div>
+                </li>
+                <li class="sidebar-item">
+                    <img src="/Content/img/index/sidebar/coupon.png" />
+                    <div class="personal-coupon"></div>
+                </li>
+                <li class="sidebar-item">
+                    <img src="/Content/img/index/sidebar/brand.png" />
+                    <div class="personal-brand"></div>
+                </li>
+                <li class="sidebar-item">
+                    <img src="/Content/img/index/sidebar/goods.png" />
+                    <div class="personal-goods"></div>
+                </li>
+                <li class="sidebar-item">
+                    <img src="/Content/img/index/sidebar/track.png" />
+                    <div class="personal-track"></div>
+                </li>
+            </ul>
+        </div>
+        <div class="sidebar-personal-bottom">
+            <ul>
+                <li class="sidebar-item"><img src="/Content/img/index/sidebar/feedback.png" /></li>
+                <li class="sidebar-item"><img src="/Content/img/index/sidebar/arrow.png" /></li>
+            </ul>
+        </div>
+    </div>
+    <!-- sidebar end -->
+    <!-- banner start -->
+    <div id="banner">
+        <div class="banner-pos">
+            <div class="banner-image">
+                <div class="banner-left">
+                    <img class="banner-arrow" src="/Content/img/index/banner/arrow_left.png" />
+                </div>
+                <div class="banner-right">
+                    <img class="banner-arrow" src="/Content/img/index/banner/arrow_right.png" />
+                </div>
+
+                <ul class="banner-list">
+                    <li class="banner-list-item">
+                        <p class="item-title">俏娃玩夏节 满238减50</p>
+                        <a href="#"><img class="slide-image" src="/Content/img/index/banner/slide_1.jpg" /></a>
+                    </li>
+                    <li class="banner-list-item">
+                        <p class="item-title">MCM 爆款箱包制造机</p>
+                        <a href="#"><img class="slide-image image-other" src="/Content/img/index/banner/slide_2.jpg" /></a>
+                    </li>
+                    <li class="banner-list-item">
+                        <p class="item-title">春夏鞋包发布会</p>
+                        <a href="#"><img class="slide-image image-other" src="/Content/img/index/banner/slide_3.jpg" /></a>
+                    </li>
+                    <li class="banner-list-item">
+                        <p class="item-title">防晒隔离早囤货</p>
+                        <a href="#"><img class="slide-image image-other" src="/Content/img/index/banner/slide_4.jpg" /></a>
+                    </li>
+                    <li class="banner-list-item">
+                        <p class="item-title">新品发布 满499减100</p>
+                        <a href="#"><img class="slide-image image-other" src="/Content/img/index/banner/slide_5.jpg" /></a>
+                    </li>
+                </ul>
+                <div class="item-underline"></div>
+            </div>
+        </div>
+    </div>
+    <!-- banner end -->
+    <!-- hang start -->
+    <div id="hang">
+        <div class="hang-img">
+            <img src="/Content/img/index/hang/bg.jpg" class="hang-hot-bg" />
+            <div class="hang-goods-hot-first">
+                <span class="hang-icon-hot-first hang-icon"></span>
+                <img class="hang-goods-hot-pic" src="/Content/img/index/hang/hot_1.jpg"></img>
+            </div>
+            <div class="hang-goods-hot-middle">
+                <span class="hang-icon-hot-middle hang-icon"></span>
+                <img class="hang-goods-hot-pic" src="/Content/img/index/hang/hot_2.jpg"></img>
+            </div>
+            <div class="hang-goods-hot-last">
+                <span class="hang-icon-hot-last hang-icon"></span>
+                <img class="hang-goods-hot-pic" src="/Content/img/index/hang/hot_3.jpg"></img>
+            </div>
+        </div>
+    </div>
+    <!-- hang end -->
+    <!-- leftSideBar start -->
+    <div id="leftSideBar">
+        <div class="leftSideBar-list">
+            <a href="#choice">
+                <img src="/Content/img/index/leftSideBar/star.png" /><span>精选</span>
+            </a>
+            <a href="#women">
+                <img src="/Content/img/index/leftSideBar/star.png" /><span>女装</span>
+            </a>
+            <a href="#shoeBag">
+                <img src="/Content/img/index/leftSideBar/star.png" /><span>鞋包</span>
+            </a>
+            <a href="#men">
+                <img src="/Content/img/index/leftSideBar/star.png" /><span>男士</span>
+            </a>
+            <a href="#sports">
+                <img src="/Content/img/index/leftSideBar/star.png" /><span>运动</span>
+            </a>
+            <a href="#jewelry">
+                <img src="/Content/img/index/leftSideBar/star.png" /><span>饰品</span>
+            </a>
+            <a href="#beauty">
+                <img src="/Content/img/index/leftSideBar/star.png" /><span>美妆</span>
+            </a>
+            <a href="#baby">
+                <img src="/Content/img/index/leftSideBar/star.png" /><span>母婴</span>
+            </a>
+            <a href="#home">
+                <img src="/Content/img/index/leftSideBar/star.png" /><span>居家</span>
+            </a>
+            <a href="#international">
+                <img src="/Content/img/index/leftSideBar/star.png" /><span>国际</span>
+            </a>
+            <a href="#life">
+                <img src="/Content/img/index/leftSideBar/star.png" /><span>生活</span>
+            </a>
+            <a href="#foreshow">
+                <img src="/Content/img/index/leftSideBar/star.png" /><span>预告</span>
+            </a>
+        </div>
+    </div>
+    <!-- leftSideBar end -->
+    <!-- hotSale start -->
+    <div id="hotSale">
+        <div class="hotSale-pos">
+
+            <!-- choice start -->
+            <div id="choice">
+                <img class="choice-title" src="/Content/img/index/hotSale/choice/choice.png" />
+
+                <!-- 1 -->
+                <div class="hotSale-item">
+                    <a href="#">
+                        <img class="hotSale-item-img" src="/Content/img/index/hotSale/choice/choice_1/choice.jpg" />
+                    </a>
+                    <div class="hotSale-item-logo">
+                        <img class="hotSale-logo-img" src="/Content/img/index/hotSale/choice/choice_1/primary.png" />
+                        <p class="hotSale-logo-p">adidas 运动随心享</p>
+                    </div>
+                    <div class="hotSale-hover">
+                        <div class="hotSale-detail">
+                            <div class="hotSale-info">
+                                <a href="#">
+                                    <img class="hotSale-info-img" src="/Content/img/index/hotSale/choice/choice_1/info_1.jpg" />
+                                    <p class="hotSale-info-p">￥142</p>
+                                </a>
+                            </div>
+                            <div class="hotSale-info">
+                                <a href="#">
+                                    <img class="hotSale-info-img" src="/Content/img/index/hotSale/choice/choice_1/info_2.jpg" />
+                                    <p class="hotSale-info-p">￥499</p>
+                                </a>
+                            </div>
+                            <div class="hotSale-info">
+                                <a href="#">
+                                    <img class="hotSale-info-img" src="/Content/img/index/hotSale/choice/choice_1/info_3.jpg" />
+                                    <p class="hotSale-info-p">￥409</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="hotSale-shop">
+                            <a href="#">
+                                <img class="hotSale-shop-img" src="/Content/img/index/hotSale/choice/choice_1/primary.png" />
+                            </a>
+                            <div class="hotSale-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                            <a href="#">
+                                <div class="hotSale-btn">进入专场</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2 -->
+                <div class="hotSale-item">
+                    <a href="#">
+                        <img class="hotSale-item-img" src="/Content/img/index/hotSale/choice/choice_2/choice.jpg" />
+                    </a>
+                    <div class="hotSale-item-logo">
+                        <img class="hotSale-logo-img" src="/Content/img/index/hotSale/choice/choice_2/primary.png" />
+                        <p class="hotSale-logo-p">复古印花 尊享优雅</p>
+                        <p class="hotSale-logo-p-sub">满498减100，上不封顶</p>
+                    </div>
+                    <div class="hotSale-hover">
+                        <div class="hotSale-detail">
+                            <div class="hotSale-info">
+                                <a href="#">
+                                    <img class="hotSale-info-img" src="/Content/img/index/hotSale/choice/choice_2/info_1.jpg" />
+                                    <p class="hotSale-info-p">￥496</p>
+                                </a>
+                            </div>
+                            <div class="hotSale-info">
+                                <a href="#">
+                                    <img class="hotSale-info-img" src="/Content/img/index/hotSale/choice/choice_2/info_2.jpg" />
+                                    <p class="hotSale-info-p">￥586</p>
+                                </a>
+                            </div>
+                            <div class="hotSale-info">
+                                <a href="#">
+                                    <img class="hotSale-info-img" src="/Content/img/index/hotSale/choice/choice_2/info_3.jpg" />
+                                    <p class="hotSale-info-p">￥586</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="hotSale-shop">
+                            <a href="#">
+                                <img class="hotSale-shop-img" src="/Content/img/index/hotSale/choice/choice_2/primary.png" />
+                            </a>
+                            <div class="hotSale-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                            <a href="#">
+                                <div class="hotSale-btn">进入专场</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3 -->
+                <div class="hotSale-item">
+                    <a href="#">
+                        <img class="hotSale-item-img" src="/Content/img/index/hotSale/choice/choice_3/choice.jpg" />
+                    </a>
+                    <div class="hotSale-item-logo">
+                        <img class="hotSale-logo-img" src="/Content/img/index/hotSale/choice/choice_3/primary.png" />
+                        <p class="hotSale-logo-p">adidas 没有不可能</p>
+                    </div>
+                    <div class="hotSale-hover">
+                        <div class="hotSale-detail">
+                            <div class="hotSale-info">
+                                <a href="#">
+                                    <img class="hotSale-info-img" src="/Content/img/index/hotSale/choice/choice_3/info_1.jpg" />
+                                    <p class="hotSale-info-p">￥439</p>
+                                </a>
+                            </div>
+                            <div class="hotSale-info">
+                                <a href="#">
+                                    <img class="hotSale-info-img" src="/Content/img/index/hotSale/choice/choice_3/info_2.jpg" />
+                                    <p class="hotSale-info-p">￥550</p>
+                                </a>
+                            </div>
+                            <div class="hotSale-info">
+                                <a href="#">
+                                    <img class="hotSale-info-img" src="/Content/img/index/hotSale/choice/choice_3/info_3.jpg" />
+                                    <p class="hotSale-info-p">￥549</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="hotSale-shop">
+                            <a href="#">
+                                <img class="hotSale-shop-img" src="/Content/img/index/hotSale/choice/choice_3/primary.png" />
+                            </a>
+                            <div class="hotSale-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                            <a href="#">
+                                <div class="hotSale-btn">进入专场</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4 -->
+                <div class="hotSale-item">
+                    <a href="#">
+                        <img class="hotSale-item-img" src="/Content/img/index/hotSale/choice/choice_4/choice.jpg" />
+                    </a>
+                    <div class="hotSale-item-logo">
+                        <img class="hotSale-logo-img" src="/Content/img/index/hotSale/choice/choice_4/primary.png" />
+                        <p class="hotSale-logo-p">花开春日 从新出发</p>
+                        <p class="hotSale-logo-p-sub">满498减100，上不封顶</p>
+                    </div>
+                    <div class="hotSale-hover">
+                        <div class="hotSale-detail">
+                            <div class="hotSale-info">
+                                <a href="#">
+                                    <img class="hotSale-info-img" src="/Content/img/index/hotSale/choice/choice_4/info_1.jpg" />
+                                    <p class="hotSale-info-p">￥298</p>
+                                </a>
+                            </div>
+                            <div class="hotSale-info">
+                                <a href="#">
+                                    <img class="hotSale-info-img" src="/Content/img/index/hotSale/choice/choice_4/info_2.jpg" />
+                                    <p class="hotSale-info-p">￥299</p>
+                                </a>
+                            </div>
+                            <div class="hotSale-info">
+                                <a href="#">
+                                    <img class="hotSale-info-img" src="/Content/img/index/hotSale/choice/choice_4/info_3.jpg" />
+                                    <p class="hotSale-info-p">￥299</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="hotSale-shop">
+                            <a href="#">
+                                <img class="hotSale-shop-img" src="/Content/img/index/hotSale/choice/choice_4/primary.png" />
+                            </a>
+                            <div class="hotSale-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                            <a href="#">
+                                <div class="hotSale-btn">进入专场</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- choice end -->
+
+            <div class="clearfix"></div>
+
+            <!-- women start-->
+            <div id="women">
+                <div class="hotSale-title">
+                    <img src="/Content/img/index/hotSale/women/woman.png" />
+                    <a href="#">
+                        <span class="hotSale-item-all">
+                            全部女装产品
+                            <span class="hotSale-item-all-arrow"></span>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- 1 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+
+                <!-- 2 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+
+                <!-- 3 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+
+                <!-- 4 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <!-- women end -->
+
+            <div class="clearfix"></div>
+
+            <!-- shoeBag start-->
+            <div id="shoeBag">
+                <div class="hotSale-title">
+                    <img src="/Content/img/index/hotSale/shoeBag/shoe.png" />
+                    <a href="#">
+                        <span class="hotSale-item-all">
+                            全部鞋包产品
+                            <span class="hotSale-item-all-arrow"></span>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- 1 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+
+                <!-- 2 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+
+                <!-- 3 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+
+                <!-- 4 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- shoeBag end -->
+
+            <div class="clearfix"></div>
+
+            <!-- men start -->
+
+            <div id="men">
+                <div class="hotSale-title">
+                    <img src="/Content/img/index/hotSale/men/men.png" />
+                    <a href="#">
+                        <span class="hotSale-item-all">
+                            全部男士产品
+                            <span class="hotSale-item-all-arrow"></span>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- 1 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+
+                <!-- 2 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+
+                <!-- 3 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+
+                <!-- 4 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- men end -->
+
+            <div class="clearfix"></div>
+
+            <!-- sports start -->
+            <div id="sports">
+                <div class="hotSale-title">
+                    <img src="/Content/img/index/hotSale/sports/sports.png" />
+                    <a href="#">
+                        <span class="hotSale-item-all">
+                            全部运动产品
+                            <span class="hotSale-item-all-arrow"></span>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- 1 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+
+                <!-- 2 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+
+                <!-- 3 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+
+                <!-- 4 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <!-- sports end -->
+
+            <div class="clearfix"></div>
+
+            <!-- jewelry start -->
+            <div id="jewelry">
+                <div class="hotSale-title">
+                    <img src="/Content/img/index/hotSale/jewelry/jewelry.png" />
+                    <a href="#">
+                        <span class="hotSale-item-all">
+                            全部饰品产品
+                            <span class="hotSale-item-all-arrow"></span>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- 1 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+
+                <!-- 2 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+
+                <!-- 3 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+
+                <!-- 4 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <!-- jewelry end -->
+
+            <div class="clearfix"></div>
+
+            <!-- beauty start -->
+            <div id="beauty">
+                <div class="hotSale-title">
+                    <img src="/Content/img/index/hotSale/beauty/beauty.png" />
+                    <a href="#">
+                        <span class="hotSale-item-all">
+                            全部美妆产品
+                            <span class="hotSale-item-all-arrow"></span>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- 1 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+
+                <!-- 2 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+
+                <!-- 3 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+
+                <!-- 4 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <!-- beauty end -->
+
+            <div class="clearfix"></div>
+
+            <!-- baby start -->
+            <div id="baby">
+                <div class="hotSale-title">
+                    <img src="/Content/img/index/hotSale/baby/baby.png" />
+                    <a href="#">
+                        <span class="hotSale-item-all">
+                            全部母婴产品
+                            <span class="hotSale-item-all-arrow"></span>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- 1 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+
+                <!-- 2 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+
+                <!-- 3 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+
+                <!-- 4 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <!-- baby end -->
+
+            <div class="clearfix"></div>
+
+            <!-- home start -->
+            <div id="home">
+                <div class="hotSale-title">
+                    <img src="/Content/img/index/hotSale/home/home.png" />
+                    <a href="#">
+                        <span class="hotSale-item-all">
+                            全部居家产品
+                            <span class="hotSale-item-all-arrow"></span>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- 1 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+
+                <!-- 2 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+
+                <!-- 3 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+
+                <!-- 4 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <!-- home end -->
+
+            <div class="clearfix"></div>
+
+            <!-- international start -->
+            <div id="international">
+                <div class="hotSale-title">
+                    <img src="/Content/img/index/hotSale/international/international.png" />
+                    <a href="#">
+                        <span class="hotSale-item-all">
+                            全部国际产品
+                            <span class="hotSale-item-all-arrow"></span>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- 1 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+
+                <!-- 2 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+
+                <!-- 3 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+
+                <!-- 4 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <!-- international end -->
+
+            <div class="clearfix"></div>
+
+            <!-- life start -->
+            <div id="life">
+                <div class="hotSale-title">
+                    <img src="/Content/img/index/hotSale/life/life.png" />
+                    <a href="#">
+                        <span class="hotSale-item-all">
+                            全部生活产品
+                            <span class="hotSale-item-all-arrow"></span>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- 1 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+
+                <!-- 2 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+
+                <!-- 3 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+
+                <!-- 4 -->
+                <div class="hotSale-wrap">
+                    <a href="#">
+                        <img class="hotSale-goods-img" src="/Content/img/index/hotSale/women/women_1.jpg" />
+                        <div class="hotSale-goods-img-vip">
+                            <div class="hotSale-vip"></div>
+                            购物即享折上7折优惠
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <p class="hotSale-goods-info">
+                            欧丝璐OUSILU羊绒专场
+                            <span class="clock"></span>
+                            <span class="rest">剩5天</span>
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <!-- life end -->
+
+            <div class="clearfix"></div>
+
+            <!-- more start -->
+            <div id="more">
+                <div class="more-pos">
+                    <div class="more-btn">逛更多生活品牌<span></span></div>
+                </div>
+            </div>
+            <!-- more end -->
+
+            <div class="clearfix"></div>
+
+            <!-- foreshow start -->
+            <div id="foreshow">
+                <div class="foreshow-pos">
+                    <img class="choice-title" src="/Content/img/index/hotSale/foreshow/foreshow.png" />
+
+                    <!-- 1 -->
+                    <div class="foreshow-item">
+                        <img class="foreshow-item-img" src="/Content/img/index/hotSale/foreshow/foreshow_1.jpg" />
+                        <div class="foreshow-item-vip">
+                            <div class="hotSale-vip"></div>
+                            满498减80，上不封顶
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <div class="foreshow-item-info">
+                            水星家纺夏凉专场
+                        </div>
+                        <div class="foreshow-alert">
+                            <div class="foreshow-text">
+                                <input type="text" placeholder="请输入邮箱或手机号" />
+                                <span class="line">|</span>
+                                <input type="button" value="提醒我" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2 -->
+                    <div class="foreshow-item">
+                        <img class="foreshow-item-img" src="/Content/img/index/hotSale/foreshow/foreshow_1.jpg" />
+                        <div class="foreshow-item-vip">
+                            <div class="hotSale-vip"></div>
+                            满498减80，上不封顶
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <div class="foreshow-item-info">
+                            水星家纺夏凉专场
+                        </div>
+                        <div class="foreshow-alert">
+                            <div class="foreshow-text">
+                                <input type="text" placeholder="请输入邮箱或手机号" />
+                                <span class="line">|</span>
+                                <input type="button" value="提醒我" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3 -->
+                    <div class="foreshow-item">
+                        <img class="foreshow-item-img" src="/Content/img/index/hotSale/foreshow/foreshow_1.jpg" />
+                        <div class="foreshow-item-vip">
+                            <div class="hotSale-vip"></div>
+                            满498减80，上不封顶
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <div class="foreshow-item-info">
+                            水星家纺夏凉专场
+                        </div>
+                        <div class="foreshow-alert">
+                            <div class="foreshow-text">
+                                <input type="text" placeholder="请输入邮箱或手机号" />
+                                <span class="line">|</span>
+                                <input type="button" value="提醒我" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4 -->
+                    <div class="foreshow-item">
+                        <img class="foreshow-item-img" src="/Content/img/index/hotSale/foreshow/foreshow_1.jpg" />
+                        <div class="foreshow-item-vip">
+                            <div class="hotSale-vip"></div>
+                            满498减80，上不封顶
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <div class="foreshow-item-info">
+                            水星家纺夏凉专场
+                        </div>
+                        <div class="foreshow-alert">
+                            <div class="foreshow-text">
+                                <input type="text" placeholder="请输入邮箱或手机号" />
+                                <span class="line">|</span>
+                                <input type="button" value="提醒我" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5 -->
+                    <div class="foreshow-item">
+                        <img class="foreshow-item-img" src="/Content/img/index/hotSale/foreshow/foreshow_1.jpg" />
+                        <div class="foreshow-item-vip">
+                            <div class="hotSale-vip"></div>
+                            满498减80，上不封顶
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <div class="foreshow-item-info">
+                            水星家纺夏凉专场
+                        </div>
+                        <div class="foreshow-alert">
+                            <div class="foreshow-text">
+                                <input type="text" placeholder="请输入邮箱或手机号" />
+                                <span class="line">|</span>
+                                <input type="button" value="提醒我" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6 -->
+                    <div class="foreshow-item">
+                        <img class="foreshow-item-img" src="/Content/img/index/hotSale/foreshow/foreshow_1.jpg" />
+                        <div class="foreshow-item-vip">
+                            <div class="hotSale-vip"></div>
+                            满498减80，上不封顶
+                            <div class="hotSale-goods-store">
+                                <div class="hotSale-heart"></div>
+                                <span>收藏品牌</span>
+                            </div>
+                        </div>
+                        <div class="foreshow-item-info">
+                            水星家纺夏凉专场
+                        </div>
+                        <div class="foreshow-alert">
+                            <div class="foreshow-text">
+                                <input type="text" placeholder="请输入邮箱或手机号" />
+                                <span class="line">|</span>
+                                <input type="button" value="提醒我" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- foreshow end -->
+
+            <div class="clearfix"></div>
+
+            <!-- moreShow start -->
+            <div id="moreShow">
+                <div class="moreShow-btn">查看更多预告</div>
+            </div>
+            <!-- moreShow end -->
+        </div>
+    </div>
+    <!-- hotSale end -->
+    <!-- footer start -->
+    <div id="footer">
+        <div class="footer-pos">
+            <div class="footer-top">
+                <ul>
+                    <li class="footer-top-item pic01"></li>
+                    <li class="footer-top-item pic02"></li>
+                    <li class="footer-top-item pic03"></li>
+                    <li class="footer-top-item pic04"></li>
+                    <li class="footer-top-item pic05"></li>
+                    <li class="footer-top-item pic06"></li>
+                    <li class="footer-top-item pic07"></li>
+                </ul>
+            </div>
+            <div class="footer-middle">
+                <dl class="footer-middle-dl">
+                    <dt>服务保障</dt>
+                    <dd><span class="footer-middle-rect"></span><a href="#">正品保证</a></dd>
+                    <dd><span class="footer-middle-rect"></span><a href="#">7天无理由放心退</a></dd>
+                    <dd><span class="footer-middle-rect"></span><a href="#">退货返运费</a></dd>
+                    <dd><span class="footer-middle-rect"></span><a href="#">7x15小时客户服务</a></dd>
+                </dl>
+                <dl class="footer-middle-dl">
+                    <dt>服务保障</dt>
+                    <dd><span class="footer-middle-rect"></span><a href="#">正品保证</a></dd>
+                    <dd><span class="footer-middle-rect"></span><a href="#">7天无理由放心退</a></dd>
+                    <dd><span class="footer-middle-rect"></span><a href="#">退货返运费</a></dd>
+                    <dd><span class="footer-middle-rect"></span><a href="#">7x15小时客户服务</a></dd>
+                </dl>
+                <dl class="footer-middle-dl">
+                    <dt>服务保障</dt>
+                    <dd><span class="footer-middle-rect"></span><a href="#">正品保证</a></dd>
+                    <dd><span class="footer-middle-rect"></span><a href="#">7天无理由放心退</a></dd>
+                    <dd><span class="footer-middle-rect"></span><a href="#">退货返运费</a></dd>
+                    <dd><span class="footer-middle-rect"></span><a href="#">7x15小时客户服务</a></dd>
+                </dl>
+                <dl class="footer-middle-dl">
+                    <dt>服务保障</dt>
+                    <dd><span class="footer-middle-rect"></span><a href="#">正品保证</a></dd>
+                    <dd><span class="footer-middle-rect"></span><a href="#">7天无理由放心退</a></dd>
+                    <dd><span class="footer-middle-rect"></span><a href="#">退货返运费</a></dd>
+                    <dd><span class="footer-middle-rect"></span><a href="#">7x15小时客户服务</a></dd>
+                </dl>
+                <dl class="footer-middle-dl">
+                    <dt>服务保障</dt>
+                    <dd><span class="footer-middle-rect"></span><a href="#">正品保证</a></dd>
+                    <dd><span class="footer-middle-rect"></span><a href="#">7天无理由放心退</a></dd>
+                    <dd><span class="footer-middle-rect"></span><a href="#">退货返运费</a></dd>
+                    <dd><span class="footer-middle-rect"></span><a href="#">7x15小时客户服务</a></dd>
+                </dl>
+                <dl class="footer-middle-qrcode">
+                    <dt>唯品会APP二维码</dt>
+                    <dd><img src="/Content/img/index/footer/qr_code.png" /></dd>
+                    <dd>下载唯品会移动APP</dd>
+                </dl>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-menu">
+                    <p>
+                        <a href="#">关于我们</a>
+                        <span class="line-white">|</span>
+                        <a href="#">About us</a>
+                        <span class="line-white">|</span>
+                        <a href="#">Investor Relations</a>
+                        <span class="line-white">|</span>
+                        <a href="#">媒体报道</a>
+                        <span class="line-white">|</span>
+                        <a href="#">品牌招商</a>
+                        <span class="line-white">|</span>
+                        <a href="#">隐私条款</a>
+                        <span class="line-white">|</span>
+                        <a href="#">唯品诚聘</a>
+                        <span class="line-white">|</span>
+                        <a href="#">365爱心基金</a>
+                        <span class="line-white">|</span>
+                        <a href="#">唯品卡</a>
+                        <span class="line-white">|</span>
+                        <a href="#">唯品地图</a>
+                        <span class="line-white">|</span>
+                        <a href="#">品牌大全</a>
+                        <span class="line-white">|</span>
+                        <a href="#">联系我们</a>
+                    </p>
+                </div>
+                <div class="footer-copyright">
+                    <p>Copyright © 2008-2017 vip.com，All Rights Reserved  使用本网站即表示接受<a href="#">唯品会用户协议</a>。版权所有<a href="#">广州唯品会信息科技有限公司</a></p>
+                    <p><a href="#">粤公网安备 44010302111111号</a> <a href="#">粤ICP备08114786号</a> <a href="#">ICP经营许可证：粤B2-20080329</a> <a href="#">网络文化经营许可证：粤网文〔2015〕1528-229</a></p>
+                    <p><a href="#">自营主体的营业执照及食品流通许可证信息</a>  <a href="#">互联网药品交易服务资格证（粤C20140002）</a></p>
+                </div>
+                <div class="footer-link">
+                    <span class="footer-link-pic"></span>
+                    <span class="footer-link-pic"></span>
+                    <span class="footer-link-pic"></span>
+                    <span class="footer-link-pic"></span>
+                    <span class="footer-link-pic"></span>
+                    <span class="footer-link-pic"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/Content/js/index.js"></script>
